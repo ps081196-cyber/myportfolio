@@ -30,3 +30,22 @@ document.querySelectorAll('.reveal').forEach((element, index) => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const progressBar = document.querySelector('.scroll-progress span');
+
+const updateScrollProgress = () => {
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+  progressBar?.style.setProperty('transform', `scaleX(${progress})`);
+};
+
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+updateScrollProgress();
+
+if (!prefersReducedMotion) {
+  window.addEventListener('pointermove', (event) => {
+    document.body.style.setProperty('--pointer-x', `${event.clientX}px`);
+    document.body.style.setProperty('--pointer-y', `${event.clientY}px`);
+  }, { passive: true });
+}
