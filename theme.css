@@ -32,3 +32,9 @@ body::after {
 
 .scroll-progress { background: rgba(240, 179, 90, .16); }
 .scroll-progress span { background: linear-gradient(90deg, var(--acid), #4dcdbe); }
+
+.visual-blog { background: #202a29; color: #d7eee5; position: relative; align-items: stretch; justify-content: stretch; padding: 25px; }
+.visual-blog::before { content: '01  02  03  04  05'; position: absolute; top: 18px; right: 22px; color: rgba(77, 205, 190, .45); font: 10px var(--mono); letter-spacing: .1em; }
+.blog-window { border: 1px solid rgba(77, 205, 190, .55); min-height: 100%; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 10px 10px 0 rgba(77, 205, 190, .08); }
+.blog-top, .blog-prompt { color: #4dcdbe; font: 10px var(--mono); text-transform: uppercase; }
+.blog-title { color: #f0b35a; font: 700 clamp(2.8rem, 5vw, 5.5rem)/.82 var(--sans); letter-spacing: -.09em; }
