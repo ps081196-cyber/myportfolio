@@ -1,0 +1,34 @@
+/* Warm developer-console background */
+:root {
+  --ink: #171512;
+  --ink-soft: #29231d;
+  --paper: #f1eadf;
+  --dim: #b9aa95;
+  --acid: #f0b35a;
+  --line: rgba(241, 234, 223, .2);
+}
+
+body {
+  background-color: var(--ink) !important;
+  background-image:
+    radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(240, 179, 90, .16), transparent 19rem),
+    radial-gradient(circle at 88% 82%, rgba(77, 205, 190, .1), transparent 23rem),
+    linear-gradient(rgba(241, 234, 223, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241, 234, 223, .04) 1px, transparent 1px) !important;
+  background-size: auto, auto, 56px 56px, 56px 56px !important;
+  background-position: center, center, 0 0, 0 0 !important;
+}
+
+body::before {
+  content: '$ deploy --production     [########..]  84%     // systems online';
+  color: rgba(240, 179, 90, .2);
+  letter-spacing: .1em;
+}
+
+body::after {
+  background: linear-gradient(180deg, transparent, rgba(77, 205, 190, .07), transparent);
+  border-top-color: rgba(77, 205, 190, .2);
+}
+
+.scroll-progress { background: rgba(240, 179, 90, .16); }
+.scroll-progress span { background: linear-gradient(90deg, var(--acid), #4dcdbe); }
